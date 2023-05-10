@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Header from '../components/Header'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -12,10 +12,9 @@ export default function RootLayout ({ children }) {
   return (
     <html lang='es'>
       <head>
-        <title> {`${metadata.title}`} </title>
+        <title> Mi primerita Next app </title>
       </head>
       <body className={inter.className} suppressHydrationWarning>
-        <Header />
         {children}
       </body>
     </html>

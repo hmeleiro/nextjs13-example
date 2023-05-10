@@ -1,32 +1,15 @@
 'use client'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 function SearchBar () {
   const [query, setQuery] = useState('')
-  // const [token, setToken] = useState(null)
+  const router = useRouter()
 
-  // useEffect(() => {
-  //   const getToken = async () => {
-  //     return await fetch('/api/token')
-  //       .then(res => res.json())
-  //       .then(data => {
-  //         setToken(data.access_token)
-  //       })
-  //   }
-  //   getToken()
-  // }, [])
-
-  const getSearch = async () => {
-    return await fetch(`/api/search?q=${query}`)
-      .then(res => res.json())
-      .then(data => console.log(data))
-  }
-
-  // TODO: Implement search functionality
   const handleSubmit = (e) => {
     e.preventDefault()
-    setQuery(query)
-    getSearch()
+    const encodedSearchQuery = encodeURI(query)
+    router.push(`/search/${encodedSearchQuery}`)
   }
 
   const handleChange = e => {
