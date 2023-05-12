@@ -9,7 +9,7 @@ function SearchBar () {
   const handleSubmit = (e) => {
     e.preventDefault()
     const encodedSearchQuery = encodeURI(query)
-    router.push(`/search/${encodedSearchQuery}`)
+    router.push(`/search?q=${encodedSearchQuery}`)
   }
 
   const handleChange = e => {
@@ -18,8 +18,8 @@ function SearchBar () {
 
   return (
     <form className='m-4' onSubmit={handleSubmit}>
-      <input key='search-bar' value={query} onChange={handleChange} placeholder='Chocolate' className='border-2 p-2' />
-      <button type='submit' onClick={handleSubmit}>Search</button>
+      <input key='search-bar' value={query} onChange={handleChange} placeholder='Chocolate' className='border-2 p-2 rounded-xl bg-sky-100 text-center' />
+      {/* <button type='submit' onClick={handleSubmit}>Search</button> */}
     </form>
   )
 }

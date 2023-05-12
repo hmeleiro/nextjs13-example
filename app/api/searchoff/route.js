@@ -23,5 +23,8 @@ export async function GET (req) {
       return data
     })
 
+  const delay = ms => new Promise(resp => setTimeout(resp, ms))
+  await delay(5000)
+
   return NextResponse.json(data)
 }

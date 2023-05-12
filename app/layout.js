@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import SearchBar from '../components/SearchBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,6 +16,7 @@ export default function RootLayout ({ children }) {
         <title> Mi primerita Next app </title>
       </head>
       <body className={inter.className} suppressHydrationWarning>
+        <SearchBar />
         {children}
       </body>
     </html>
